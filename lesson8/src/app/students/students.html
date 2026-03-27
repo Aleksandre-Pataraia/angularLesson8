@@ -1,0 +1,17 @@
+<p>students works!</p>
+<div id="scoresdiv">
+    @for(user of studentsScores; track user){
+        <div class="card" [style.background-color]="user.active ? 'green' : 'red'">
+            <h1>{{user.name}}</h1>
+            @if (user.active === true) {
+                <p>is active</p>
+            } @else {
+                <p>not active</p>
+            }
+            <!-- <p>{{user.active}}</p> -->
+            @for (item of user.courses; track item) {
+                <p><span>{{item.title}}</span>: {{item.score}}</p>
+            } 
+        </div>
+    }
+</div>
